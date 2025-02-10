@@ -1,0 +1,99 @@
+/* Parent container for the booking area */
+.ttbm_book_now_area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Left column (Quantity and Total) */
+.ttbm_book_now_area .fdColumn {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Custom booking buttons section */
+.custom-booking-section {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Button container */
+.custom-booking-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Base button styles */
+.fancy-button {
+    background: linear-gradient(135deg, #56ab2f, #a8e063);
+    color: white;
+    font-size: 16px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+    max-width: 220px;
+    justify-content: center;
+    text-align: center;
+}
+
+.fancy-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* WhatsApp button */
+.fancy-button.wa-button {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+}
+
+/* Email button */
+.fancy-button.email-button {
+    background: linear-gradient(135deg, #3498db, #2ecc71);
+}
+
+/* Icon styles */
+.fancy-button span {
+    font-size: 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .ttbm_book_now_area {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .custom-booking-section {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .custom-booking-buttons {
+        width: 100%;
+    }
+
+    .fancy-button {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .fancy-button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}

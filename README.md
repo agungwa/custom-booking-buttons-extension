@@ -2,7 +2,7 @@
 
 A WordPress plugin that adds custom booking buttons for WhatsApp and Email to the Tour Booking Manager.
 
-![Plugin Screenshot]() <!-- Add a screenshot if available -->
+![Plugin Screenshot](https://raw.githubusercontent.com/agungwa/custom-booking-buttons-extension/refs/heads/master/Screenshot%202025-02-10%20at%2019.00.00.png) <!-- Add a screenshot if available -->
 
 ## Description
 

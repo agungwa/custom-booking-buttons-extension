@@ -2,7 +2,7 @@
 
 A WordPress plugin that adds custom booking buttons for WhatsApp and Email to the Tour Booking Manager.
 
-![Plugin Screenshot](screenshot.png) <!-- Add a screenshot if available -->
+![Plugin Screenshot]() <!-- Add a screenshot if available -->
 
 ## Description
 
@@ -19,7 +19,7 @@ This plugin is designed to extend the functionality of the **Tour Booking Manage
 
 ## Installation
 
-1. **Download the Plugin**: Download the plugin ZIP file from the [releases page](https://github.com/your-repo/custom-booking-buttons/releases) or clone the repository.
+1. **Download the Plugin**: Download the plugin ZIP file from the [releases page](https://github.com/agungwa/custom-booking-buttons-extension/releases) or clone the repository.
 2. **Upload the Plugin**:
    - Go to your WordPress admin dashboard.
    - Navigate to **Plugins > Add New > Upload Plugin**.
@@ -59,7 +59,7 @@ Please ensure your code follows the WordPress coding standards.
 
 ## Support
 
-If you encounter any issues or have questions about the plugin, please [open an issue](https://github.com/your-repo/custom-booking-buttons/issues) on GitHub.
+If you encounter any issues or have questions about the plugin, please [open an issue](agungwa/custom-booking-buttons-extension/issues) on GitHub.
 
 ## License
 
@@ -67,7 +67,7 @@ This plugin is licensed under the [GNU General Public License v2.0](https://www.
 
 ## Credits
 
-- Developed by [Agung](https://github.com/your-username).
+- Developed by [Agung](https://github.com/agungwa).
 - Built as an extension for the **Tour Booking Manager** plugin by [MagePeople](https://wordpress.org/plugins/tour-booking-manager/).
 
 ---

@@ -110,29 +110,29 @@
 
     // Function to format email body
     function formatEmailBody(formData) {
-        let body = `I would like to book the following tour: ${bookingData.tourTitle} (#${bookingData.tourId}).\n\n`;
-        body += `Start Date: ${formData.startDate}\n`;
-        body += `Total Price: Rp${formData.totalPrice}\n\n`;
-
+        let body = `Saya ingin memesan tur berikut: ${bookingData.tourTitle} (#${bookingData.tourId}).\n\n`;
+        body += `Tanggal Mulai: ${formData.startDate}\n`;
+        body += `Total Harga: Rp${formData.totalPrice}\n\n`;
+        
         if (formData.tickets.length > 0) {
-            body += 'Tickets:\n';
+            body += 'Tiket:\n';
             formData.tickets.forEach(ticket => {
                 body += `- ${ticket.name} (${ticket.price}): ${ticket.qty}\n`;
                 body += `- Total: ${ticket.price * ticket.qty}\n`;
                 body += `- ----------------------\n`;
             });
         }
-
+        
         if (formData.services.length > 0) {
-            body += '\nExtra Services:\n';
+            body += '\nLayanan Tambahan:\n';
             formData.services.forEach(service => {
                 body += `- ${service.name} (${service.price}): ${service.qty}\n`;
                 body += `- Total: ${service.price * service.qty}\n`;
                 body += `- ----------------------\n`;
             });
         }
-
-        body += '\nPlease provide more details.';
+        
+        body += '\nMohon berikan detail lebih lanjut.';
 
         // Debugging: Log the email body
         // console.log('Email Body:', body);

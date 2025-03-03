@@ -58,34 +58,35 @@
         const totalPrice = $('.vrc-order-details-costs-row-total .vrc_price').text().trim();
 
         // Format the WhatsApp message
-        let message = `Hello, I want to confirm my car rental order:\n\n`;
-        message += `*Personal Details:*\n`;
+        // Format pesan WhatsApp
+        let message = `Halo, saya ingin mengonfirmasi pesanan sewa mobil saya:\n\n`;
+        message += `*Detail Pribadi:*\n`;
         for (const [key, value] of Object.entries(personalDetails)) {
             message += `- ${key}: ${value}\n`;
         }
         message += `\n`;
 
-        message += `*Order Details:*\n`;
+        message += `*Detail Pesanan:*\n`;
         for (const [key, value] of Object.entries(orderDetails)) {
             message += `- ${key}: ${value}\n`;
         }
         message += `\n`;
 
-        message += `*Summaries:*\n`;
+        message += `*Ringkasan:*\n`;
         for (const [key, value] of Object.entries(summaryDetails)) {
             message += `- ${key}: ${value}\n`;
         }
         message += `\n`;
 
-        message += `*Car Details:*\n`;
+        message += `*Detail Mobil:*\n`;
         message += carDetailsText
 
         message += `\n\n`;
 
-        message += `*Total Price:* Rp${totalPrice}\n\n`;
-        message += `Please confirm my order.`;
+        message += `*Total Harga:* Rp${totalPrice}\n\n`;
+        message += `Mohon konfirmasi pesanan saya.`;
 
-        console.log("MESSAGE::", message)
+        console.log("PESAN::", message);
 
         // Open WhatsApp with the pre-filled message
         const whatsappNumber = bookingData.whatsappNumber; // Use the WhatsApp number from plugin settings

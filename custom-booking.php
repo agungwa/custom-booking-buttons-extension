@@ -21,6 +21,10 @@ class CustomBookingButtons {
         add_action('ttbm_before_add_cart_btn', [$this, 'add_custom_booking_buttons'], 10, 2);
         add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts'], 10, 1);
         add_action('wp_head', [$this, 'hide_default_booking_button']);
+
+        // Add "Confirm via WhatsApp" button
+        add_action('wp_footer', [$this, 'add_confirm_wa_button']);
+        add_action('wp_enqueue_scripts', [$this, 'enqueue_custom_script']);
     }
 
     // Add settings page to the admin menu
@@ -100,7 +104,6 @@ class CustomBookingButtons {
             // 'tourTitle' => 'test_title'
         ]);
     }
-    
 
     // Add custom booking buttons
     public function add_custom_booking_buttons($ttbm_product_id, $tour_id) {
@@ -125,6 +128,41 @@ class CustomBookingButtons {
                 display: none !important;
             }
         </style>';
+    }
+
+    /**
+     * Add "Confirm via WhatsApp" button HTML to the page.
+     */
+    public function add_confirm_wa_button() {
+        // Generate the HTML for the button
+        $html = '
+        <div class="vrcordcancbox confirm-wa-button-container">
+            <h3>Confirm via WhatsApp</h3>
+            <a href="javascript:void(0);" id="confirm-wa-button" class="btn vrc-pref-color-btn">
+                <span class="fab fa-whatsapp"></span> Confirm via WhatsApp
+            </a>
+        </div>';
+
+        // Output the HTML
+        echo $html;
+    }
+
+    /**
+     * Enqueue custom script for WhatsApp confirmation.
+     */
+    public function enqueue_custom_script() {
+        wp_enqueue_script(
+            'custom-booking-buttons-wa', // Handle
+            plugins_url('custom-booking-buttons-wa.js', __FILE__), // Script URL
+            ['jquery'], // Dependencies
+            null, // Version
+            true // Load in footer
+        );
+
+        // Pass dynamic data to JavaScript
+        wp_localize_script('custom-booking-buttons-wa', 'bookingData', [
+            'whatsappNumber' => get_option('custom_booking_whatsapp_number', '1234567890'), // Get WhatsApp number from plugin settings
+        ]);
     }
 }
 

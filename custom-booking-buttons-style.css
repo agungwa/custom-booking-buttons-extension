@@ -70,6 +70,72 @@
     font-size: 20px;
 }
 
+/* Base styles for the button container */
+.vrcordcancbox.confirm-wa-button-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Fancy and elegant button styles */
+#confirm-wa-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #25D366; /* WhatsApp green */
+    border: none;
+    border-radius: 50px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+/* WhatsApp icon */
+#confirm-wa-button .fab {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Hover effect */
+#confirm-wa-button:hover {
+    background-color: #128C7E; /* Darker WhatsApp green */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Active effect */
+#confirm-wa-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ripple effect */
+#confirm-wa-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+#confirm-wa-button:active::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    transition: transform 0s, opacity 0s;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
     .ttbm_book_now_area {
